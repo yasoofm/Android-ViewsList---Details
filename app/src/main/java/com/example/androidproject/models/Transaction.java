@@ -6,7 +6,7 @@ public class Transaction {
     //private Enum<String> type;
     private double amount, balance;
 
-    Transaction(int id, int account, String date, double balance, double amount){
+    public Transaction(int id, int account, String date, double balance, double amount){
         this.id = id;
         this.account = account;
         this.date = date;
