@@ -24,6 +24,7 @@ public class historyRepo {
         ArrayList<Transaction> transactions = new ArrayList<>();
         for(int i = 0; i < numberOfItems; i++){
             Transaction transaction = new Transaction(i + 1, i + 1, String.valueOf(Calendar.getInstance().getTime()), 500.5, 200.5);
+            transactions.add(transaction);
         }
         return transactions;
     }
