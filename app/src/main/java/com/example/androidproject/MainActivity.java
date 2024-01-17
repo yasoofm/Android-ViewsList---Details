@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements TransactionItemLi
         historyRecyclerView = findViewById(R.id.historyRecyclerView);
         historyRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         historyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        TransactionAdapter transactionAdapter = new TransactionAdapter(transactions);
+        TransactionAdapter transactionAdapter = new TransactionAdapter(transactions, this);
         historyRecyclerView.setAdapter(transactionAdapter);
 
 
@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity implements TransactionItemLi
 
     @Override
     public void onTransactionItemClick(Transaction transaction) {
-        Intent intent = new Intent(MainActivity.this, DetailsCurrencyActivity.class);
-        intent.putExtra("CURRENCY_KEY", currency);
+        Intent intent = new Intent(MainActivity.this, TransactionDetailsActivity.class);
+        intent.putExtra("TRANSACTION_KEY", transaction);
         startActivity(intent);
     }
 }

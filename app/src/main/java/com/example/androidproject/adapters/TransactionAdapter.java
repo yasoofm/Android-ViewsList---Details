@@ -9,15 +9,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidproject.R;
+import com.example.androidproject.interfaces.TransactionItemListener;
 import com.example.androidproject.models.Transaction;
 
 import java.util.ArrayList;
 
 public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.TransactionHolder> {
     private ArrayList<Transaction> transactions;
+    private TransactionItemListener transactionItemListener;
 
-    public TransactionAdapter(ArrayList<Transaction> transactions){
+    public TransactionAdapter(ArrayList<Transaction> transactions, TransactionItemListener transactionItemListener){
         this.transactions = transactions;
+        this.transactionItemListener = transactionItemListener;
     }
     @NonNull
     @Override
@@ -33,9 +36,13 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
     @Override
     public void onBindViewHolder(@NonNull TransactionHolder holder, int position) {
         holder.dateTextView.setText(transactions.get(position).getDate());
-        //holder.typeTextView.setText(transactions.get(position).get);
+        holder.typeTextView.setText(String.valueOf(transactions.get(position).getType()));
         holder.balanceTextView.setText(String.valueOf(transactions.get(position).getBalance()));
         holder.amountTextView.setText(String.valueOf(transactions.get(position).getAmount()));
+
+        holder.itemView.setOnClickListener(v -> {
+            transactionItemListener.onTransactionItemClick(transactions.get(position));
+        });
     }
 
     @Override

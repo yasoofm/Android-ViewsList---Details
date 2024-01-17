@@ -4,49 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/historyItem"
     android:layout_width="match_parent"
-    android:layout_height="150dp">
+    android:layout_height="150dp"
+    android:background="@drawable/card">
 
     <TextView
         android:id="@+id/dateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/blinker_light"
+        android:text="17/5/20204"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/typeTextView"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.90999997" />
 
     <TextView
         android:id="@+id/typeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/blinker_light"
+        android:text="WITHDRAWAL"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/amountTextView"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/dateTextView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/amountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/balanceTextView"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/typeTextView"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="54dp"
+        android:fontFamily="@font/blinker_light"
+        android:text="200.6"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/balanceTextView"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
 
     <TextView
         android:id="@+id/balanceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:fontFamily="@font/blinker_light"
+        android:text="1000.5"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dateTextView"
+        app:layout_constraintEnd_toStartOf="@+id/dateTextView"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dateTextView" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/cash_withdrawal"
+        android:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/typeTextView"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/growth"
+        app:layout_constraintBottom_toBottomOf="@+id/amountTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/amountTextView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/amountTextView"
+        app:layout_constraintVertical_bias="0.0">
+
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
