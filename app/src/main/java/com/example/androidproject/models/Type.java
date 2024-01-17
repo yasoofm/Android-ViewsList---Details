@@ -1,7 +1,7 @@
 package com.example.androidproject.models;
 
 public enum Type {
-    WITHDRAW,
+    WITHDRAWAL,
     DEPOSIT,
     TRANSFER
 }

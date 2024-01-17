@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements TransactionItemLi
 
     RecyclerView historyRecyclerView;
     ArrayList<Transaction> transactions;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements TransactionItemLi
         historyRecyclerView = findViewById(R.id.historyRecyclerView);
         historyRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         historyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        TransactionAdapter transactionAdapter = new TransactionAdapter(transactions, this);
+        TransactionAdapter transactionAdapter = new TransactionAdapter(transactions, this, getApplicationContext());
         historyRecyclerView.setAdapter(transactionAdapter);
 
 
